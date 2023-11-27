@@ -11,11 +11,8 @@ interface dataProps {
 
 async function getData({ userId }: dataProps) {
   const res = await fetch(`http://localhost:3333/user/${userId}`);
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
 
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
   }
 
@@ -42,7 +39,7 @@ export async function PostView(props: Post) {
             ).fromNow()}`}</span>
           </Link>
         </div>
-        <span className="text-2xl">{content}</span>
+        <span className="text-xl">{content}</span>
       </div>
     </div>
   );
