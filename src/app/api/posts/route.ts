@@ -1,10 +1,10 @@
 import {api} from '@/lib/api'
 
 
-export async function GET(request:Request) {
+export async function GET(request:Request, response:Response) {
     
-    const response = await api.get('/posts')
+    const allPosts = await api.get('/posts')
     
-    return Response.json(response.data)
+    return Response.json(allPosts.data)
 }
 
