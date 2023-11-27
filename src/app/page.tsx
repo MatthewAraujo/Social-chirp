@@ -1,6 +1,9 @@
 import { PostView } from "./components/postview";
 import { Post } from "./interface/post";
 
+
+
+
 async function getData() {
   const res = await fetch("http://localhost:3333/posts");
   // The return value is *not* serialized
