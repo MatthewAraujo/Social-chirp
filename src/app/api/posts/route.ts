@@ -1,7 +1,7 @@
 import {api} from '@/lib/api'
 
 
-export async function GET(request:Request, response:Response) {
+export async function GET() {
     
     const allPosts = await api.get('/posts')
     
