@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import Link from "next/link";
 
 import relativeTime from "dayjs/plugin/relativeTime";
-import { Post } from "../interface/post";
+import { Post } from "@/interface/post";
 dayjs.extend(relativeTime);
 
 interface dataProps {
@@ -29,10 +29,11 @@ export async function PostView(props: Post) {
 
   return (
     <div key={id} className="flex gap-3 border-b border-slate-400 p-4">
-      <div>{author.user.name}</div>
       <div className="flex flex-col">
         <div className="flex gap-1 text-slate-300">
-          <Link href={`/@${userId}`}></Link>
+          <Link href={`/${userId}`}>
+            <span className="font-bold">{`@${author.user.name}`}</span>
+          </Link>
           <Link href={`/post/${id}`}>
             <span className="font-thin">{` · ${dayjs(
               createdAt

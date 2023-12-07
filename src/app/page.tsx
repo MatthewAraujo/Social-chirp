@@ -1,8 +1,5 @@
-import { PostView } from "./components/postview";
-import { Post } from "./interface/post";
-
-
-
+import { Post } from "@/interface/post";
+import { PostView } from "../components/postview";
 
 async function getData() {
   const res = await fetch("http://localhost:3333/posts");
@@ -62,7 +59,9 @@ export default async function Home() {
               </div>
             </a>
             <span>
-              <a href="https://patreon.com/t3dotgg">🐦 Chirp Blue</a>
+              <a href="https://matthew-araujo.vercel.app/" target="_blank">
+                👌 Social Chirp
+              </a>
             </span>
           </div>
         </div>
